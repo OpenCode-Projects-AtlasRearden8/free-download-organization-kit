@@ -1,0 +1,70 @@
+{
+  "_description": "Mirror of data/freebies.csv, kept in sync by build.py.",
+  "items": [
+    {
+      "id": "ex-font-display-serif",
+      "title": "Playfair-Style Display Serif (example entry)",
+      "category": "font",
+      "source_url": "https://fonts.google.com/",
+      "download_location": "~/Downloads/fonts/display-serif/playfair.zip",
+      "license_type": "OFL 1.1",
+      "license_url": "https://openfontlicense.org/",
+      "usage_rights": "commercial-ok",
+      "can_edit": "true",
+      "must_credit": "false",
+      "notes": "Example starter row. Safe for book covers and client work. OFL fonts may be embedded in PDFs and websites."
+    },
+    {
+      "id": "ex-printable-chore-chart",
+      "title": "Weekly Chore Chart Printable (example entry)",
+      "category": "printable",
+      "source_url": "https://www.freepik.com/",
+      "download_location": "~/Downloads/printables/chore-chart/chore-chart.pdf",
+      "license_type": "Custom Site License",
+      "license_url": "https://www.freepik.com/legal/terms",
+      "usage_rights": "personal-use-only",
+      "can_edit": "false",
+      "must_credit": "true",
+      "notes": "Example starter row. Personal use only. Do not resell or bundle; repos are fine if the site's terms allow."
+    },
+    {
+      "id": "ex-ebook-ai-guide",
+      "title": "Beginner's AI Starter Guide (example entry)",
+      "category": "ebook",
+      "source_url": "https://dylanasdale.github.io/",
+      "download_location": "~/Downloads/ebooks/ai-starter-guide/ai-starter-guide.epub",
+      "license_type": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "usage_rights": "share-and-adapt",
+      "can_edit": "true",
+      "must_credit": "true",
+      "notes": "Example starter row. Great for quoting or translating. Always keep the attribution line when redistributing."
+    },
+    {
+      "id": "ex-audio-lofi-loop",
+      "title": "Cozy Lofi Loop Pack (example entry)",
+      "category": "audio",
+      "source_url": "https://pixabay.com/",
+      "download_location": "~/Downloads/audio/lofi-loop-pack/loops.zip",
+      "license_type": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "usage_rights": "commercial-ok",
+      "can_edit": "true",
+      "must_credit": "false",
+      "notes": "Example starter row. Fine for YouTube and podcast backgrounds. Selling the raw loop files themselves is not allowed."
+    },
+    {
+      "id": "ex-font-handwritten",
+      "title": "Chunky Handwritten Font (example entry)",
+      "category": "font",
+      "source_url": "https://www.dafont.com/",
+      "download_location": "~/Downloads/fonts/handwritten/chunky.zip",
+      "license_type": "Free for Personal Use (users must buy commercial)",
+      "license_url": "https://www.dafont.com/readme.php",
+      "usage_rights": "personal-use-only",
+      "can_edit": "false",
+      "must_credit": "false",
+      "notes": "Example starter row. Fun for personal planners only. Contact the designer before any commercial project."
+    }
+  ]
+}

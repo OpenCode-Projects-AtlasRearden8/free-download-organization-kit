@@ -1,0 +1,72 @@
+:root {
+  --bg: #faf7f2;
+  --card: #ffffff;
+  --ink: #2b2b33;
+  --muted: #6b6b78;
+  --accent: #4a6fa5;
+  --line: #e6e1d8;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.55;
+}
+header, main, section, footer { max-width: 1000px; margin: 0 auto; padding: 1rem 1.25rem; }
+h1 { margin-bottom: 0.25rem; }
+.tagline { color: var(--muted); margin-top: 0; }
+.meta { color: var(--muted); font-size: 0.9rem; }
+
+nav { max-width: 1000px; margin: 0 auto; padding: 0 1.25rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.chip {
+  font: inherit;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--card);
+  cursor: pointer;
+}
+.chip.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+caption { text-align: left; color: var(--muted); font-size: 0.85rem; padding: 0.4rem 0; }
+th, td { text-align: left; padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { background: #f1ece3; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; }
+tbody tr:hover { background: #f9f5ee; }
+.freebie-title { font-weight: bold; }
+.path { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.85rem; color: #555; word-break: break-all; }
+.license-cell a { color: var(--accent); }
+.notes { display: block; color: var(--muted); font-size: 0.85rem; margin-top: 0.25rem; }
+
+.badge {
+  display: inline-block;
+  padding: 0.15rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+.badge-ok { background: #e2f2e4; color: #1d5c2a; }
+.badge-share { background: #e3ecf9; color: #274b7a; }
+.badge-personal { background: #fdeccd; color: #7a4a12; }
+.badge-unknown { background: #f3e0e0; color: #7a2727; }
+
+.legend { list-style: none; padding-left: 0; }
+.legend li { padding: 0.4rem 0; }
+footer { color: var(--muted); font-size: 0.95rem; border-top: 1px solid var(--line); margin-top: 2rem; }
+code { background: #f1ece3; padding: 0.1rem 0.35rem; border-radius: 4px; }
+
+@media print {
+  nav, script { display: none; }
+  table { font-size: 0.8rem; }
+  body { background: #fff; }
+}

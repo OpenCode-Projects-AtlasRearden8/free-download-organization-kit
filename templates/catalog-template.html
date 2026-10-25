@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Freebie Shelf — My Free Downloads Catalog</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>🗂️ My Freebie Shelf</h1>
+  <p class="tagline">A friendly catalog of the free downloads I grabbed — where each file lives, what license it carries, and what I'm allowed to do with it.</p>
+  <p class="meta">{{TOTAL}} items · {{CATEGORIES}} categories · generated {{GENERATED}} · local-first, no signups</p>
+</header>
+
+<nav aria-label="Filters">
+  <button class="chip active" data-filter="all">All ({{TOTAL}})</button>
+  {{CATEGORY_BUTTONS}}
+</nav>
+
+<main>
+  <table id="catalog" aria-describedby="catalog-caption">
+    <caption id="catalog-caption">Columns: where it came from, where the file lives, the license, and your usage rights.</caption>
+    <thead>
+      <tr>
+        <th scope="col">Freebie</th>
+        <th scope="col">Type</th>
+        <th scope="col">Source</th>
+        <th scope="col">Download lives at</th>
+        <th scope="col">License</th>
+        <th scope="col">Usage rights</th>
+      </tr>
+    </thead>
+    <tbody>
+{{ROWS}}
+    </tbody>
+  </table>
+</main>
+
+<section aria-labelledby="legend-title">
+  <h2 id="legend-title">What the usage-rights badges mean</h2>
+  <ul class="legend">
+    <li><span class="badge badge-ok">commercial-ok</span> — safe for products, covers, or anything you sell. Double-check the license page anyway; rules can change.</li>
+    <li><span class="badge badge-share">share-and-adapt</span> — you may share and modify the work (usually a Creative Commons license). Most require a simple credit line.</li>
+    <li><span class="badge badge-personal">personal-use-only</span> — keep it in your own projects. Don't sell it or use it in anything commercial without buying a license.</li>
+    <li><span class="badge badge-unknown">check-me</span> — rights are unclear. Look at the license page before using this one for anything beyond personal use.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>Plain-English explanations of free-license types live in <a href="docs/license-types.md">docs/license-types.md</a>. Print a pocket-size summary from <a href="rights-card.html">rights-card.html</a>.</p>
+  <p data-no-signup="true">100% local. No accounts, no tracking, no uploads. Rebuild the page anytime with <code>python3 build.py</code>.</p>
+  <p><small>Freebie catalog template by Asdale Dynamics, LLC — MIT licensed.</small></p>
+</footer>
+
+<script>
+(function () {
+  var chips = document.querySelectorAll(".chip[data-filter]");
+  var rows = document.querySelectorAll("#catalog tbody tr");
+  chips.forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      chips.forEach(function (c) { c.classList.remove("active"); });
+      chip.classList.add("active");
+      var f = chip.getAttribute("data-filter");
+      rows.forEach(function (row) {
+        row.style.display = (f === "all" || row.getAttribute("data-category") === f) ? "" : "none";
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

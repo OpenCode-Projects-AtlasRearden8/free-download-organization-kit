@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Printable Rights Card — Freebie Shelf</title>
+<style>
+  :root {
+    --ink: #2b2b33;
+    --muted: #6b6b78;
+    --line: #c9c2b6;
+    --accent: #4a6fa5;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--ink);
+    background: #f2efe9;
+    line-height: 1.5;
+  }
+  .page { max-width: 640px; margin: 0 auto; padding: 1.25rem; }
+  .no-print { background: #fff9e8; border-bottom: 1px solid var(--line); padding: 0.6rem 1.25rem; font-size: 0.9rem; }
+  .card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  }
+  h1 { font-size: 1.3rem; margin: 0 0 0.2rem; }
+  h2 { font-size: 1rem; margin: 1rem 0 0.35rem; color: var(--accent); }
+  .subtitle { color: var(--muted); font-size: 0.85rem; margin-top: 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin-top: 0.25rem; }
+  th, td { border: 1px solid var(--line); padding: 0.4rem 0.55rem; text-align: left; vertical-align: top; }
+  th { background: #f4f1ea; }
+  ul { margin: 0.25rem 0; padding-left: 1.1rem; font-size: 0.9rem; }
+  .tpl { font-family: Menlo, Consolas, monospace; font-size: 0.8rem; background: #f4f1ea; border: 1px dashed var(--line); padding: 0.5rem 0.7rem; border-radius: 6px; }
+  .foot { margin-top: 1rem; font-size: 0.75rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 0.5rem; }
+  button.print { font: inherit; padding: 0.4rem 1rem; border: 1px solid var(--accent); border-radius: 6px; background: var(--accent); color: #fff; cursor: pointer; }
+  @media print {
+    body { background: #fff; }
+    .no-print { display: none; }
+    .card { box-shadow: none; border-color: #999; }
+    button.print { display: none; }
+    @page { size: A4; margin: 12mm; }
+  }
+</style>
+</head>
+<body>
+<div class="no-print">This is a print-friendly card. Press the button below (or Ctrl/Cmd + P) and it prints on one page. <button class="print" onclick="window.print()">Print this card</button></div>
+<div class="page">
+  <main class="card">
+    <h1>📋 Freebie Rights Card</h1>
+    <p class="subtitle">The cheat sheet for “can I use this free download?” — keep a copy next to your desk.</p>
+
+    <h2>1) The four badges</h2>
+    <table>
+      <tr><th>Badge</th><th>Plain-English meaning</th></tr>
+      <tr><td><strong>commercial-ok</strong></td><td>Safe for things you sell, even business or book work.</td></tr>
+      <tr><td><strong>share-and-adapt</strong></td><td>Sharing and editing allowed (usually with credit).</td></tr>
+      <tr><td><strong>personal-use-only</strong></td><td>Your own projects only. Want commercial? Buy a license.</td></tr>
+      <tr><td><strong>check-me</strong></td><td>Rights unclear — read the license page first.</td></tr>
+    </table>
+
+    <h2>2) The licenses in one breath each</h2>
+    <ul>
+      <li><strong>MIT</strong> — anything goes; just keep the copyright line in the file.</li>
+      <li><strong>CC0 / public domain</strong> — yours for anything, no credit needed.</li>
+      <li><strong>CC BY</strong> — anything, even commercial; give a credit line.</li>
+      <li><strong>CC BY-SA</strong> — credit, and your remix carries the same license.</li>
+      <li><strong>CC BY-NC</strong> — credit, but nothing commercial.</li>
+      <li><strong>CC BY-ND</strong> — share as-is; don’t modify.</li>
+      <li><strong>OFL 1.1</strong> — font magic: embed, print, sell books with it; don’t sell the font itself.</li>
+      <li><strong>“Personal use only”</strong> — the expensive-surprise clause; commercial costs extra.</li>
+      <li><strong>Site terms</strong> (Freepik, Pixabay, etc.) — read the bullets: no reselling raw files, sometimes attribution, sometimes count limits.</li>
+    </ul>
+
+    <h2>3) The three questions at download time</h2>
+    <ol>
+      <li><strong>What can’t I do with this?</strong> (usually personal-only, no selling, no re-sharing)</li>
+      <li><strong>Who gets credit, and where?</strong></li>
+      <li><strong>What do I keep?</strong> (license URL + file location → your catalog)</li>
+    </ol>
+
+    <h2>4) Attribution template</h2>
+    <p class="tpl">[Creator name] — [asset name] — [license, e.g. CC BY 4.0] — [link]</p>
+
+    <h2>5) Red flags</h2>
+    <ul>
+      <li>“Free” with no license page at all</li>
+      <li>No commercial use, when commercial plans exist</li>
+      <li>“Contact for permissions” — fine, but ask <em>before</em> you build</li>
+    </ul>
+
+    <p class="foot">Freebie Rights Card — part of the <strong>Free Download Organization Kit</strong> by Asdale Dynamics, LLC · Educational only, not legal advice · Pair with <strong>docs/license-types.md</strong> for the full explanations, and log every download in <strong>index.html</strong>.</p>
+  </main>
+</div>
+</body>
+</html>

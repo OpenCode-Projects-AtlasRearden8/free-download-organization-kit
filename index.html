@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Freebie Shelf — My Free Downloads Catalog</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>🗂️ My Freebie Shelf</h1>
+  <p class="tagline">A friendly catalog of the free downloads I grabbed — where each file lives, what license it carries, and what I'm allowed to do with it.</p>
+  <p class="meta">5 items · 4 categories · generated 2026-10-25 · local-first, no signups</p>
+</header>
+
+<nav aria-label="Filters">
+  <button class="chip active" data-filter="all">All (5)</button>
+  <button class="chip" data-filter="font">Font (2)</button>
+  <button class="chip" data-filter="printable">Printable (1)</button>
+  <button class="chip" data-filter="ebook">Ebook (1)</button>
+  <button class="chip" data-filter="audio">Audio (1)</button>
+</nav>
+
+<main>
+  <table id="catalog" aria-describedby="catalog-caption">
+    <caption id="catalog-caption">Columns: where it came from, where the file lives, the license, and your usage rights.</caption>
+    <thead>
+      <tr>
+        <th scope="col">Freebie</th>
+        <th scope="col">Type</th>
+        <th scope="col">Source</th>
+        <th scope="col">Download lives at</th>
+        <th scope="col">License</th>
+        <th scope="col">Usage rights</th>
+      </tr>
+    </thead>
+    <tbody>
+  <tr data-category="font"><td class="freebie-title">Playfair-Style Display Serif (example entry)<span class="notes">Example starter row. Safe for book covers and client work. OFL fonts may be embedded in PDFs and websites.</span></td><td>font</td><td><a href="https://fonts.google.com/" rel="noopener">fonts.google.com</a></td><td class="path">~/Downloads/fonts/display-serif/playfair.zip</td><td class="license-cell"><a href="https://openfontlicense.org/" rel="noopener">OFL 1.1</a><span class="notes">✔ edits allowed</span></td><td><span class="badge badge-ok">commercial-ok</span></td></tr>
+  <tr data-category="printable"><td class="freebie-title">Weekly Chore Chart Printable (example entry)<span class="notes">Example starter row. Personal use only. Do not resell or bundle; repos are fine if the site&#x27;s terms allow.</span></td><td>printable</td><td><a href="https://www.freepik.com/" rel="noopener">www.freepik.com</a></td><td class="path">~/Downloads/printables/chore-chart/chore-chart.pdf</td><td class="license-cell"><a href="https://www.freepik.com/legal/terms" rel="noopener">Custom Site License</a><span class="notes">✔ credit required</span></td><td><span class="badge badge-personal">personal-use-only</span></td></tr>
+  <tr data-category="ebook"><td class="freebie-title">Beginner&#x27;s AI Starter Guide (example entry)<span class="notes">Example starter row. Great for quoting or translating. Always keep the attribution line when redistributing.</span></td><td>ebook</td><td><a href="https://dylanasdale.github.io/" rel="noopener">dylanasdale.github.io</a></td><td class="path">~/Downloads/ebooks/ai-starter-guide/ai-starter-guide.epub</td><td class="license-cell"><a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a><span class="notes">✔ credit required, edits allowed</span></td><td><span class="badge badge-share">share-and-adapt</span></td></tr>
+  <tr data-category="audio"><td class="freebie-title">Cozy Lofi Loop Pack (example entry)<span class="notes">Example starter row. Fine for YouTube and podcast backgrounds. Selling the raw loop files themselves is not allowed.</span></td><td>audio</td><td><a href="https://pixabay.com/" rel="noopener">pixabay.com</a></td><td class="path">~/Downloads/audio/lofi-loop-pack/loops.zip</td><td class="license-cell"><a href="https://pixabay.com/service/license-summary/" rel="noopener">Pixabay Content License</a><span class="notes">✔ edits allowed</span></td><td><span class="badge badge-ok">commercial-ok</span></td></tr>
+  <tr data-category="font"><td class="freebie-title">Chunky Handwritten Font (example entry)<span class="notes">Example starter row. Fun for personal planners only. Contact the designer before any commercial project.</span></td><td>font</td><td><a href="https://www.dafont.com/" rel="noopener">www.dafont.com</a></td><td class="path">~/Downloads/fonts/handwritten/chunky.zip</td><td class="license-cell"><a href="https://www.dafont.com/readme.php" rel="noopener">Free for Personal Use (users must buy commercial)</a></td><td><span class="badge badge-personal">personal-use-only</span></td></tr>
+    </tbody>
+  </table>
+</main>
+
+<section aria-labelledby="legend-title">
+  <h2 id="legend-title">What the usage-rights badges mean</h2>
+  <ul class="legend">
+    <li><span class="badge badge-ok">commercial-ok</span> — safe for products, covers, or anything you sell. Double-check the license page anyway; rules can change.</li>
+    <li><span class="badge badge-share">share-and-adapt</span> — you may share and modify the work (usually a Creative Commons license). Most require a simple credit line.</li>
+    <li><span class="badge badge-personal">personal-use-only</span> — keep it in your own projects. Don't sell it or use it in anything commercial without buying a license.</li>
+    <li><span class="badge badge-unknown">check-me</span> — rights are unclear. Look at the license page before using this one for anything beyond personal use.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>Plain-English explanations of free-license types live in <a href="docs/license-types.md">docs/license-types.md</a>. Print a pocket-size summary from <a href="rights-card.html">rights-card.html</a>.</p>
+  <p data-no-signup="true">100% local. No accounts, no tracking, no uploads. Rebuild the page anytime with <code>python3 build.py</code>.</p>
+  <p><small>Freebie catalog template by Asdale Dynamics, LLC — MIT licensed.</small></p>
+</footer>
+
+<script>
+(function () {
+  var chips = document.querySelectorAll(".chip[data-filter]");
+  var rows = document.querySelectorAll("#catalog tbody tr");
+  chips.forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      chips.forEach(function (c) { c.classList.remove("active"); });
+      chip.classList.add("active");
+      var f = chip.getAttribute("data-filter");
+      rows.forEach(function (row) {
+        row.style.display = (f === "all" || row.getAttribute("data-category") === f) ? "" : "none";
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
